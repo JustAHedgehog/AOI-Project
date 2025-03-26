@@ -9,7 +9,8 @@ Y_1 = np.zeros(len(T))
 Y_2 = np.zeros(len(T))
 dx = (10-(-10))/100  # 設定間距dx
 
-choice = bool(input("Please choose one, one wave function[0] or two wave function[1]: "))
+choice = bool(int(input("Please choose one, one wave function[0] or two wave function[1]: ")))
+print(choice)
 plt.ion() # 允許動態圖
 plt.figure(1)
 if choice: # y_1 = e^-(x+2)^^2; y_2 = e^-(x-2)^^2
