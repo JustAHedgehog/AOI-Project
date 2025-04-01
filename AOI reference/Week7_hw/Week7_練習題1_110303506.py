@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 
 def main():
     #讀取txt檔
-    d_1=np.loadtxt('Week7_hw/txt/g0t.txt') 
-    d_2=np.loadtxt('Week7_hw/txt/g1t.txt')
-    d_3=np.loadtxt('Week7_hw/txt/g2t.txt')
-    d_4=np.loadtxt('Week7_hw/txt/g3t.txt')
-    d_5=np.loadtxt('Week7_hw/txt/g4t.txt')
-    d_6=np.loadtxt('Week7_hw/txt/g5t.txt')
+    d_1=np.loadtxt(r'week_7\txt\g0t.txt') 
+    d_2=np.loadtxt(r'week_7\txt\g1t.txt')
+    d_3=np.loadtxt(r'week_7\txt\g2t.txt')
+    d_4=np.loadtxt(r'week_7\txt\g3t.txt')
+    d_5=np.loadtxt(r'week_7\txt\g4t.txt')
+    d_6=np.loadtxt(r'week_7\txt\g5t.txt')
     
     #將讀入的檔案寫成串列方便計算
     d = [d_1,d_2,d_3,d_4,d_5,d_6]
