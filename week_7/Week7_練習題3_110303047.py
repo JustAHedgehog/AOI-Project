@@ -1,6 +1,6 @@
 import cv2
 
-img=cv2.imread(r'week_7\Lenna.png') #將lena.png讀進來
+img=cv2.imread(r'Source\Lenna.png') #將lena.png讀進來
 cv2.imshow("orginal_image",img) #顯示原始影像
 print(img.shape) #查看圖片大小
 img_1 = img.copy() #複製一個新的影像
