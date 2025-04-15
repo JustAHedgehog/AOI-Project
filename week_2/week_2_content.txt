@@ -1,0 +1,7 @@
+AOI的功能分別為：
+1. 定位 2. 識別 3. 辨識 4. 瑕疵檢測 5. 驗證 6. 量測
+ 
+AOI設備：
+設備名稱：VIN-US731CTA-E4 IP攝影機
+功能：車牌辨識（符合第三功能：辨識）
+產品連結：https://www.vacron.com.tw/product_detail.php?Key=1233
