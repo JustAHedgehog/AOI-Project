@@ -4,7 +4,7 @@ import numpy as np
 
 def main():
     tmp = []
-    cap = cv2.VideoCapture(r'Source\viewFromME_video1.mp4')
+    cap = cv2.VideoCapture(r'week_11\viewFromME_video1.mp4')
     ret_1, img_1 = cap.read()  # 讀取影像
     cv2.waitKey(600)
     ret_2, img_2 = cap.read()

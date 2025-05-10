@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def main():
-    img = cv2.imread(r'Source\coinOnDesk_lowC.jpg') #讀取圖像
+    img = cv2.imread(r'week_10\coinOnDesk_lowC.jpg') #讀取圖像
     
     cv2.imshow('original image', img)
     equ_B = cv2.equalizeHist(img[:,:,0]) # 分別針對三個通道增加對比度

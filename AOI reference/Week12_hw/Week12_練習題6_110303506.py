@@ -2,11 +2,13 @@ import cv2
 import numpy as np
 
 def main():
-    img = cv2.imread('Week12_hw/severalPatten.jpg')
+    img = cv2.imread(r'week_12\severalPatten.jpg')
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     gray = cv2.medianBlur(img, 3)
     edges = cv2.Canny(gray, 100, 250)
-    circles = cv2.HoughCircles(edges, cv2.HOUGH_GRADIENT, 1, 100, param1=250, param2=25, minRadius=10, maxRadius=100)
+    circles = cv2.HoughCircles(edges, cv2.HOUGH_GRADIENT, 1, 100,
+                               param1=250, param2=25, minRadius=10, maxRadius=100)
+    print(circles.shape)
     circles = np.int16(np.around(circles))
     for i in circles[0,:]:
         cv2.circle(img, (i[0], i[1]), i[2], (0,0,255),2)

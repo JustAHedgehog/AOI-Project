@@ -4,7 +4,7 @@ datas = []
 L = np.array([1,-1])
 
 for i in range(0, 5):
-    path = r'Source\txt\g' + str(i) + 't.txt'
+    path = r'week_7\txt\g' + str(i) + 't.txt'
     d = np.loadtxt(path)
     x = np.linspace(0, 10, len(d))  # 設定x座標數
     y_L = np.abs(np.convolve(d, L, mode='same'))  # 使用卷積運算

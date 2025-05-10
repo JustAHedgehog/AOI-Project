@@ -3,7 +3,7 @@ import numpy as np
 
 
 def main():
-    cap = cv2.VideoCapture(r'Source\motionPattern_0506.MOV')
+    cap = cv2.VideoCapture(r'week_10\motionPattern_0506.MOV')
     ret, frame1 = cap.read()  # 讀取影像
     cv2.waitKey(1000)
     ret, frame2 = cap.read()

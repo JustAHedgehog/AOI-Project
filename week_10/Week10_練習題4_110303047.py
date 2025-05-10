@@ -1,8 +1,8 @@
 import cv2
 
 def main():
-    img_1 = cv2.imread(r'Source\messi5.jpg') #讀取影像
-    img_2 = cv2.imread(r'Source\messi5p.jpg')
+    img_1 = cv2.imread(r'week_10\messi5.jpg') #讀取影像
+    img_2 = cv2.imread(r'week_10\messi5p.jpg')
     diff = cv2.absdiff(img_1, img_2) #相減運算
     cv2.imshow('img_1', img_1) #顯示原圖以及相減結果
     cv2.imshow('img_2', img_2)

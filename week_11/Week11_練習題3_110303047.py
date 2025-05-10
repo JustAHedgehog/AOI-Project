@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 def main():
-    cap = cv2.VideoCapture(r'Source\IMG_3006.MOV') # 
+    cap = cv2.VideoCapture(r'week_11\IMG_3006.MOV') # 
     while True:
         ret, frame = cap.read() # 讀取影像
         if ret: # 如果讀取失敗則結束

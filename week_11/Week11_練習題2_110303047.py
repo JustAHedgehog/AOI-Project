@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 def main():
-    img = cv2.imread(r'Source\img_dilate_google0424.jpg', 0) # 讀取灰階圖片
+    img = cv2.imread(r'week_11\img_dilate_google0424.jpg', 0) # 讀取灰階圖片
     cv2.imshow('import', img) # 顯示原圖
     a, thr = cv2.threshold(img, 200, 255, cv2.THRESH_BINARY_INV) # 二值化
     kernel = np.ones((3, 3), np.uint8) # 定義結構元素
