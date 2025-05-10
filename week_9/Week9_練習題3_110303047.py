@@ -3,7 +3,7 @@ import cv2
 
 def main():
 
-    img = cv2.imread(r'Source\coinOnDesk.jpg', 0) #讀影像
+    img = cv2.imread(r'week_9\coinOnDesk.jpg', 0) #讀影像
     rows, cols = img.shape #計算座標
     # cv2.circle(img, (cols, rows), 20, (0,0,255),-1) 
     cv2.circle(img, (105, 125), 5, (0,0,255),2) #畫圓點

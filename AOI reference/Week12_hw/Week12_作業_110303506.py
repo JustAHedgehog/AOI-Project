@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 def main():
-    cap = cv2.VideoCapture('Week12_hw/2coins_motion.wmv')
+    cap = cv2.VideoCapture(r'week_12\2coins_motion.wmv')
     ret, img_1 = cap.read() #讀取影像
     ret_2, img_2 = cap.read()
     while True:
