@@ -8,7 +8,7 @@ def main():
     R = np.linspace(-10, 10, 500)
     dR = (max(R)-min(R))/len(R)
 
-    for Q in q:
+    for Q in q: # 計算每個點的轉換後的座標
         r_0 = x[0]*np.cos(Q)+y[0]*np.sin(Q)
         r_1 = x[1]*np.cos(Q)+y[1]*np.sin(Q)
         r_2 = x[2]*np.cos(Q)+y[2]*np.sin(Q)
@@ -17,7 +17,7 @@ def main():
         r_5 = x[5]*np.cos(Q)+y[5]*np.sin(Q)
         r_6 = x[6]*np.cos(Q)+y[6]*np.sin(Q)
         box = [] # 投票箱
-        for i in R:
+        for i in R: # 掃描每格以進行投票
             if r_0 > i and r_0 < i+dR:
                 box.append('A')
             if r_1 > i and r_1 < i+dR:
