@@ -8,7 +8,7 @@ def main():
     cv2.imshow('edges', edges) # 顯示邊緣檢測結果
     lines = cv2.HoughLines(edges, 1, np.pi / 180, 110) # 霍夫變換，以1px為單位，角度以1度為單位，110為閾值以減少雜訊
     N = lines.shape[0]
-    print(np.shape(lines), N)
+    print(np.shape(lines))
     for n in range(N):
         r, theta = lines[n][0]
         L = 1000
