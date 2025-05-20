@@ -5,7 +5,7 @@ import cv2
 def main():
     w = 12; p = -1.0; d = 50; D = 0
     f = p*d/w
-    cap = cv2.VideoCapture('Week13_hw/cam_f_Calibration_d_Meas.mp4')
+    cap = cv2.VideoCapture(r'Week_13/cam_f_Calibration_d_Meas.mp4')
     ret, img = cap.read()
     while ret:
         cnt_max = findMarker(img)
