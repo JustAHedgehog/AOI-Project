@@ -9,7 +9,7 @@ def findMarker(image):
     return cnt_max
 
 def main():
-    cap = cv2.VideoCapture('Week13_hw/motionPattens2.mov')
+    cap = cv2.VideoCapture(r'week_13\motionPattens2.mov')
     ret, img = cap.read()
     while ret:
         cnt_max = findMarker(img)

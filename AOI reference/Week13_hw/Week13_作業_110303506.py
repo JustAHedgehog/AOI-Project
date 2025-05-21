@@ -22,13 +22,13 @@ def puttxt(image, text, pos_x, pos_y): #put text on image
 def main():
     w = 12; p = -1.0; d = 50; D = 0 #initial value
     f = p*d/w
-    cap = cv2.VideoCapture('Week13_hw/movingCoin.wmv') #source
+    cap = cv2.VideoCapture(r'week_13\movingCoin.wmv') #source
     ret, img = cap.read()
     while ret:
         dim = (1280, 720)
         resized_img = cv2.resize(img, dim, interpolation = cv2.INTER_AREA) #resize image shape to 1280x720
         axis(1280, 720, resized_img)
-        circles = findMarker( resized_img)
+        circles = findMarker(resized_img)
         if circles is not None:
             circles = np.int16(np.around(circles))
             c = circles[0]
