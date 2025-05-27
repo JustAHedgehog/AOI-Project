@@ -23,7 +23,7 @@ def puttxt(image, text, pos_x, pos_y): #put text on image
 def main():
     w = 12; p = -1.0; d = 50; D = 0 #initial value
     f = p*d/w
-    cap = cv2.VideoCapture('Week14_hw/motionPattens3.mov')
+    cap = cv2.VideoCapture(r'week_14\motionPattens3.mov')
     ret, img = cap.read()
     w = img.shape[1]; h = img.shape[0]
     print(w,h)
@@ -31,7 +31,7 @@ def main():
         axis(w,h,img)
         cnt_max = findMarker(img)
         rect = cv2.minAreaRect(cnt_max)
-        box = np.int0(cv2.boxPoints(rect))
+        box = np.intp(cv2.boxPoints(rect))
         cv2.drawContours(img, [box], 0, (0,0,255), 2)
         point(int(rect[0][0]), int(rect[0][1]), w, h, img)
         x_ = np.rad2deg(np.arctan((rect[0][0]-w/2)/f))
