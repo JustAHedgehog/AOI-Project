@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 
 def findMarker(image):
-    # gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(image, (5,5), 0)
     thr = cv2.adaptiveThreshold(blur, 250, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 11,2)
     contours,_ = cv2.findContours(thr, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -11,24 +10,25 @@ def findMarker(image):
 
 def draw_contours(image, cnt_max):
     rect = cv2.minAreaRect(cnt_max)
-    box = np.int0(cv2.boxPoints(rect))
+    box = np.intp(cv2.boxPoints(rect))
     cv2.drawContours(image, [box], 0, (0,0,255), 2)
     return int(rect[0][0]), int(rect[0][1])
 
 def puttxt(image, text, pos_x, pos_y): #put text on image
     cv2.putText(image, text, (pos_x, pos_y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
 
-def axis(w, h, image): #draw x and y axis
+def axes(w, h, image): #draw x and y axis
     cv2.line(image, (0, int(h/2)), (w, int(h/2)), (255, 0, 0), 2)
     cv2.line(image, (int(w/2), 0), (int(w/2), h), (255, 0, 0), 2)
+    cv2.circle(image, (int(w/2), int(h/2)), 7, (255, 0, 0), 2)  # center point
 
 def main():
     
     f_0 = 593
     f_1 = 675
     l = 18
-    cap_1 = cv2.VideoCapture('Week14_hw/videoCam0_calbrateNballPos.mp4')
-    cap_2 = cv2.VideoCapture('Week14_hw/videoCam1_calbrateNballPos.mp4')
+    cap_1 = cv2.VideoCapture('week_14/videoCam0_calbrateNballPos.mp4')
+    cap_2 = cv2.VideoCapture('week_14/videoCam1_calbrateNballPos.mp4')
     while True:
         ret_1, img_1 = cap_1.read()
         ret_2, img_2 = cap_2.read()
@@ -37,9 +37,10 @@ def main():
         U_red = np.array([118,195,255])
         L_red = np.array([34,117,220])
         
+        # 先抓出球的部分
         mask_1 = cv2.inRange(img_1, L_red, U_red)
         mask_2 = cv2.inRange(img_2, L_red, U_red)
-        try:
+        try: # 假設有球才會釋出影像
             cnt_1 = findMarker(mask_1)
             cnt_2 = findMarker(mask_2)
             x_1, y_1 = draw_contours(img_1, cnt_1)
@@ -62,9 +63,9 @@ def main():
             puttxt(img_1, text_x, 80, 120)
             puttxt(img_1, text_y, 80, 160)
             puttxt(img_1, text_z, 80, 200)
-            axis(w_1, h_1, img_1)
-            axis(w_2, h_2, img_2)
-        except:
+            axes(w_1, h_1, img_1)
+            axes(w_2, h_2, img_2)
+        except: # 沒有則直接跳過
             continue
         cv2.imshow('img', img_1)
         cv2.imshow('img2', img_2)

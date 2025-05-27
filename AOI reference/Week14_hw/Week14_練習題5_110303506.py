@@ -11,7 +11,7 @@ def findMarker(image):
 
 def draw_contours(image, cnt_max):
     rect = cv2.minAreaRect(cnt_max)
-    box = np.int0(cv2.boxPoints(rect))
+    box = np.intp(cv2.boxPoints(rect))
     cv2.drawContours(image, [box], 0, (0,0,255), 2)
     return int(rect[0][0]), int(rect[0][1])
 
@@ -27,8 +27,8 @@ def main():
     f_0 = 593
     f_1 = 675
     l = 18
-    img_1 = cv2.imread('Week14_hw/Position1(z69cm)_Cam0.jpg')
-    img_2 = cv2.imread('Week14_hw/Position1(z69cm)_Cam1.jpg')
+    img_1 = cv2.imread('week_14/Position1(z69cm)_Cam0.jpg')
+    img_2 = cv2.imread('week_14/Position1(z69cm)_Cam1.jpg')
     w_1 = img_1.shape[1]; h_1 = img_1.shape[0]
     w_2 = img_2.shape[1]; h_2 = img_2.shape[0]
     U_red = np.array([118,195,255])

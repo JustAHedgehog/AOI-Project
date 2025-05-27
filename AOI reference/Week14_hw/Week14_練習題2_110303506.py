@@ -22,7 +22,7 @@ def puttxt(image, text, pos_x, pos_y): #put text on image
 
 def draw_contours(image, cnt_max):
     rect = cv2.minAreaRect(cnt_max)
-    box = np.int0(cv2.boxPoints(rect))
+    box = np.intp(cv2.boxPoints(rect))
     cv2.drawContours(image, [box], 0, (0,0,255), 2)
     return int(rect[0][0]), int(rect[0][1])
 
@@ -30,8 +30,8 @@ def main():
     f_0 = 1000
     f_1 = 1000
     l = 30
-    img_1 = cv2.imread('Week14_hw/0609_circleCam0.jpg')
-    img_2 = cv2.imread('Week14_hw/0609_circleCam1.jpg')
+    img_1 = cv2.imread(r'week_14\0609_circleCam0.jpg')
+    img_2 = cv2.imread(r'Week_14\0609_circleCam1.jpg')
     w_1 = img_1.shape[1]; h_1 = img_1.shape[0]
     w_2 = img_2.shape[1]; h_2 = img_2.shape[0]
     cntMax_1 = findMarker(img_1)
