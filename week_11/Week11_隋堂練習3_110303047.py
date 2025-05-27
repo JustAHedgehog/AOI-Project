@@ -3,7 +3,7 @@ import numpy as np
 
 
 def main():
-    img = cv2.imread(r'week_11\rice-shaded.tif')  # 讀檔
+    img = cv2.imread(r'Source\rice-shaded.tif')  # 讀檔
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 灰階以利二值化
     a, thr = cv2.threshold(gray, 123, 255, cv2.THRESH_BINARY)  # 二值化以利找輪廓
     cv2.imshow('threshold', thr)

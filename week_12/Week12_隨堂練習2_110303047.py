@@ -1,9 +1,8 @@
 import cv2
 import numpy as np
 
-
 def main():
-    cap = cv2.VideoCapture('coin.mp4')
+    cap = cv2.VideoCapture(r'week_12\coin.mp4')
     ret, img_1 = cap.read()  # 讀取影像
     # cv2.waitKey(40)
     ret_2, img_2 = cap.read()

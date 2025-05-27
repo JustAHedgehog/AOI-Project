@@ -6,7 +6,7 @@ def main():
     tmp = []
     cap = cv2.VideoCapture(r'week_11\viewFromME_video1.mp4')
     ret_1, img_1 = cap.read()  # 讀取影像
-    cv2.waitKey(600)
+    cv2.waitKey(60)
     ret_2, img_2 = cap.read()
     while True:
         diff = cv2.absdiff(img_1, img_2)  # 找出差異
@@ -25,8 +25,7 @@ def main():
                 continue
             cv2.rectangle(img_1, (x, y), (x+w, y+h), (0, 0, 255), 2)
             cv2.imshow('bounding box', img_1)
-        # 寫在迴圈外以保障永遠更新影像做計算
-        img_1 = img_2.copy()
+        img_1 = img_2.copy() # 寫在迴圈外以保障永遠更新影像做計算
         cv2.waitKey(20)
         ret_2, img_2 = cap.read()
         # 按下q鍵提早結束
