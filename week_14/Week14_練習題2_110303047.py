@@ -9,13 +9,13 @@ def findMarker(image, w, f):
         circles = np.uint16(np.around(circles))
         c = circles[0][0]  # Return the first detected circle
         cv2.circle(image, (c[0], c[1]), c[2], (0, 255, 0), 2)
-        x = c[0]
+        x = c[0] # 圓心點
         a = np.arctan((x-w/2)/f)
         return a
     
 def main():
-    f = 1000
-    l = 30
+    f = 1000 # 因兩鏡頭焦距皆相同
+    l = 30 # 兩鏡頭間距離
     img_1 = cv2.imread(r'week_14\0609_circleCam0.jpg')
     img_2 = cv2.imread(r'Week_14\0609_circleCam1.jpg')
     w_1 = img_1.shape[1]
@@ -24,7 +24,7 @@ def main():
     a_2 = findMarker(img_2, w_2, f)
     z = l/(np.tan(a_1)-np.tan(a_2))
     x = (l/2)*((np.tan(a_1)+np.tan(a_2))/(np.tan(a_1)-np.tan(a_2)))
-    print(f'The point is at x={np.round(x,1)} px, z={np.round(z,1)} px')
+    print(f'The point is at x={np.round(x,1)} cm, z={np.round(z,1)} cm')
 
 if __name__ == '__main__':
     main()
