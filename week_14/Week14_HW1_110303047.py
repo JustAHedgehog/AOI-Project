@@ -24,7 +24,7 @@ def axis(w, h, image): #draw x and y axis
     cv2.line(image, (int(w/2), 0), (int(w/2), h), (255, 0, 0), 2)
 
 def main():
-    
+
     f_0 = 593
     f_1 = 675
     l = 18
@@ -33,6 +33,8 @@ def main():
     while True:
         ret_1, img_1 = cap_1.read()
         ret_2, img_2 = cap_2.read()
+        if not ret_1 or not ret_2:
+            break
         w_1 = img_1.shape[1]; h_1 = img_1.shape[0]
         w_2 = img_2.shape[1]; h_2 = img_2.shape[0]
         U_red = np.array([118,195,255])
@@ -66,7 +68,8 @@ def main():
         cv2.imshow('img2', img_2)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
-    cv2.waitKey(0)
+    cap_1.release()
+    cap_2.release()
     cv2.destroyAllWindows()
 
 if __name__=='__main__':
