@@ -28,6 +28,7 @@ def main():
     L_red = np.array([52,23,14])
     U_red = np.array([165,81,29])
     mask = cv2.inRange(img, L_red, U_red)
+    cv2.imshow('mask', mask)
     cnt = findMarker(mask)
     axes(w,h,img)
     x, y = draw_contours(img, cnt)
