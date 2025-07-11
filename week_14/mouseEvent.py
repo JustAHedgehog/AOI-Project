@@ -3,7 +3,7 @@ import cv2
 def get_pixel_rgb(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
         b, g, r = img[y, x]
-        print(f"Pixel at ({x}, {y}) - RGB: ({r}, {g}, {b})")
+        print(f"Pixel at ({x}, {y}) - BGR: ({b}, {g}, {r})")
 '''for video'''
 # cap = cv2.VideoCapture('Exercise/1.mp4')
 # ret,img = cap.read()
@@ -15,7 +15,7 @@ def get_pixel_rgb(event, x, y, flags, param):
 #     # ret,img = cap.read()
 # cv2.namedWindow('img')
 '''for image'''
-img = cv2.imread(r'week_14\traffic0609_2.jpg')
+img = cv2.imread(r'final\prob_2\frame.png')
 cv2.imshow('img',img)
 cv2.setMouseCallback('img', get_pixel_rgb)
 cv2.waitKey(0)
