@@ -5,3 +5,6 @@ Objects in Leacture 'Automatic Optical Inspection'.
 
 # Final Exam
 Due to the limit of updating file size, some files are moved to [Google Drive](https://drive.google.com/drive/folders/1v_Uz4ld9XrsxdNDtCBp4BTmzJMH0VdYz?usp=drive_link)
+
+# Source
+[Attached link](https://drive.google.com/drive/folders/1pA8t4TCiStI9mAlXhvz3Ju52jpp78xbj) is Google Drive in this lecture, not knowing everything exist.
